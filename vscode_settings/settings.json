@@ -1,0 +1,42 @@
+{
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Fira Code",
+    "files.autoSave": "onFocusChange",
+    "editor.renderWhitespace": "all",
+    "editor.wrappingIndent": "none",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 2,
+    "editor.lineHeight": 20,
+    "editor.tabCompletion": "on",
+    "editor.rulers": [
+        125
+    ],
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.renderLineHighlight": "gutter",
+    "workbench.colorCustomizations":{
+        "tab.activeBackground": "#32302f",
+        "tab.activeBorder": "#1d2021",
+        "tab.activeForeground": "#a89984",
+        "activityBar.border": "#1d2021",
+        "activityBar.background": "#32302f",
+        "activityBar.foreground": "#a89984",
+        "editorGroup.emptyBackground": "#32302f",
+        "sideBar.background": "#32302f",
+        "sideBar.border": "#1d2021",
+        "sideBar.foreground": "#a89984",
+        "editorCursor.foreground": "#a89984",
+        "statusBar.background": "#242526",
+        "statusBar.foreground": "#a89984"
+    },
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "Gruvbox Material Medium",
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "workbench.iconTheme": "file-icons",
+    "explorer.openEditors.visible": 0,
+    "gitlens.currentLine.enabled": false
+}
