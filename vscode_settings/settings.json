@@ -1,43 +1,38 @@
 {
-    "editor.fontSize": 13,
-    "editor.fontFamily": "Fira Code",
-    "editor.fontWeight": "400",
-    "editor.renderWhitespace": "all",
-    "editor.wrappingIndent": "none",
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "editor.tabSize": 2,
-    "editor.lineHeight": 18,
-    "editor.tabCompletion": "on",
-    "editor.rulers": [
-        125
-    ],
-    "editor.minimap.enabled": false,
-    "workbench.startupEditor": "none",
-    "editor.renderLineHighlight": "gutter",
-    "workbench.colorCustomizations":{
-        "tab.activeForeground": "#ffffff85",
-        "tab.inactiveBackground": "#1f1f24",
-        "tab.inactiveForeground": "#515b70",
-        "activityBar.border": "#1d2021",
-        "activityBar.background": "#1f1f24",
-        "activityBar.foreground": "#ffffff85",
-        "editorGroup.emptyBackground": "#1f1f24",
-        "sideBar.background": "#1f1f24",
-        "sideBar.border": "#1d2021",
-        "sideBar.foreground": "#ffffff85",
-        "editorCursor.foreground": "#ffffff85",
-        "statusBar.background": "#242526",
-        "statusBar.foreground": "#ffffff85"
-    },
-    "explorer.confirmDelete": false,
-    "workbench.iconTheme": "file-icons-colourless",
-    "explorer.openEditors.visible": 0,
-    "gitlens.currentLine.enabled": false,
-    "workbench.colorTheme": "Xcode Partial (Dark)",
-    "editor.largeFileOptimizations": false,
-    "editor.cursorStyle": "line-thin",
+  "editor.fontSize": 13,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontWeight": "400",
+  "editor.renderWhitespace": "all",
+  "editor.wrappingIndent": "none",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "editor.lineHeight": 20,
+  "editor.tabCompletion": "on",
+  "editor.rulers": [
+      125
+  ],
+  "editor.minimap.enabled": false,
+  "workbench.startupEditor": "none",
+  "editor.renderLineHighlight": "gutter",
+  "workbench.colorCustomizations":{
+    "activityBar.background": "#282c34",
+    "activityBar.border": "#1d2021",
+    "activityBar.foreground": "#7f848e",
+    "editorGroup.emptyBackground": "#32302f",
+    "editorCursor.foreground": "#7f848e",
+    "tab.activeBackground": "#282c34",
+    "tab.activeBorder": "#1d2021",
+    "tab.activeForeground": "#7f848e",
+    "sideBar.background": "#282c34",
+    "sideBar.border": "#1d2021",
+    "sideBar.foreground": "#7f848e",
+    "statusBar.foreground": "#7f848e",
+},
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "file-icons",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.lineHeight": 1.23,
   "editor.minimap.renderCharacters": false,
@@ -46,36 +41,7 @@
   "workbench.activityBar.visible": false,
   "workbench.editor.tabCloseButton": "left",
   "workbench.editor.showIcons": false,
-  "window.nativeTabs": true,
-  "json.maxItemsComputed": 10000,
-  "editor.tokenColorCustomizations": {
-    "[Xcode Partial (Light)]": {
-      "textMateRules": [
-        {
-          "scope": "comment",
-          "settings": {
-            "foreground": "#536579",
-            "fontStyle": "italic"
-          }
-        }
-      ]
-    },
-    "[Xcode Partial (Dark)]": {
-      "textMateRules": [
-        {
-          "scope": "source",
-          "settings": {
-            "foreground": "#D4D4D4"
-          }
-        },
-        {
-          "scope": "comment",
-          "settings": {
-            "foreground": "#6C7986",
-            "fontStyle": "italic"
-          }
-        }
-      ]
-    }
-  }
+  "explorer.openEditors.visible": 0,
+  "gitlens.currentLine.enabled": false,
+  "files.autoSave": "onFocusChange"
 }
