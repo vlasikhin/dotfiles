@@ -1,7 +1,8 @@
 # Plugins
 
-* Advansed-new-file
-* One Dark Pro
+* One Monokai Theme
 * Rainbow Brackets
 * Ruby
-* Yml
+* file-icons
+* GitLens
+* Go
