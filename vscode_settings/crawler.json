@@ -2,11 +2,11 @@
 	"crawler": {
 		"prefix": "crw",
 		"body": [
-			"class CHANGE_ME < ApplicationCrawler || IntlCrawler",
+			"class CHANGE_ME < ApplicationCrawler",
 			"  domain \"\"",
-			"  start_urls \"\"", 
+			"  start_urls \"\"",
 			"  seller company: \"\",",
-			"         address: \"\",", 
+			"         address: \"\",",
 			"         phone:   \"\",",
 			"         website: \"\"",
 			"",
@@ -24,30 +24,45 @@
 			"  end",
 			"",
 			"  def parse_listing",
-			"    field :id,           value: MurmurHash3::V32.str_hash(url.to_s).to_i",
+			"    field :id,           value: ::MurmurHash3::V32.str_hash(url.basename)",
 			"    field :url,          value: url.to_s",
 			"    field :domain,       value: domain",
 			"    field :condition,    value: \"used\"",
 			"    field :location,     value: \"\"",
 			"    field :price,        value: 0",
-			"    field :categories,   value:  categories.to_a",
+			"    field :categories,   value: categories.to_a",
 			"    field :title,        value: fields.values_at(:year, :manufacturer, :model).compact.join(\" \")",
-			"    # yield fields",
+			"",
+			"    field :original_currency, value: \"\"",
+			"    field :original_price, value: xpath(\"\")",
+			"    field :price, value: fields.values_at(:original_price, :original_currency).compact.join(\" \")",
+			"",
+			"    yield fields",
 			"  end",
 			"end"
 		],
-		"description": "crawler"
+		"description": "crawler_snippet"
 	},
 
-	"require_relative": {
-		"prefix": "req",
+	"i18_snippet": {
+		"prefix": "i18",
 		"body": [
 			"require_relative \"\"",
-			"class CHANGE_ME",
+			"class CHANGE_ME < CHANGE_ME",
 			"  domain \"\", lang: ",
 			"  translate from:",
 			"end"
 		],
-		"description": "require_relative"
+		"description": "i18_snippet"
+	},
+
+	"price_snippet": {
+		"prefix": "prc",
+		"body": [
+			"field :original_currency, value: \"\"",
+			"field :original_price, value: xpath(\"\")",
+			"field :price, value: fields.values_at(:original_price, :original_currency).compact.join(\" \")",
+		],
+		"description": "price_snippet"
 	}
 }
