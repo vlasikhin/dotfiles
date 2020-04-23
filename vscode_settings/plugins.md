@@ -1,7 +1,6 @@
 # Plugins
 
-* One Monokai Theme
-* Rainbow Brackets
+* Noctis Lux
 * Ruby
 * file-icons
 * GitLens
