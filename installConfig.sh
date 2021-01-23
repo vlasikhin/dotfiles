@@ -25,6 +25,9 @@ sudo spctl --master-disable
 # проверить статус: sudo pmset -g
 sudo pmset -c autopoweroff 0
 
+defaults -currentHost write -g
+AppleFontSmoothing -int 0
+
 printf ".DS_Store\nThumbs.db\n.idea\/" >> ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
 git config --global core.autocrlf input

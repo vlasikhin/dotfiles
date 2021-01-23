@@ -29,13 +29,10 @@
 			"    field :domain,      value: domain",
 			"    field :condition,   value: \"used\"",
 			"    field :location,    value: \"\"",
-			"    field :price,       value: 0",
+			"    field :price,       value: PriceHelper.parse(\"0\").to_s",
 			"    field :categories,  value: categories.to_a",
 			"    field :title,       value: fields.values_at(:year, :manufacturer, :model).compact.join(\" \")",
 			"",
-			"    field :original_currency, value: \"\"",
-			"    field :original_price, value: xpath(\"\")",
-			"    field :price, value: fields.values_at(:original_price, :original_currency).compact.join(\" \")",
 			"",
 			"    field :image, value: xpath(\"\"), service: true",
 			"",
@@ -50,6 +47,7 @@
 		"prefix": "i18",
 		"body": [
 			"require_relative \"\"",
+			"",
 			"class CHANGE_ME < CHANGE_ME",
 			"  domain \"\", lang: CHANGE_ME",
 			"  translate from: CHANGE_ME",
@@ -58,21 +56,44 @@
 		"description": "i18_snippet"
 	},
 
-	"price_snippet": {
-		"prefix": "prc",
+	"title_snippet": {
+		"prefix": "ttl",
 		"body": [
-			"field :original_currency, value: \"\"",
-			"field :original_price, value: xpath(\"\")",
-			"field :price, value: fields.values_at(:original_price, :original_currency).compact.join(\" \")",
+			"field :title do",
+			"  if fields[:manufacturer] && fields[:model]",
+			"    fields.values_at(:year, :manufacturer, :model)",
+			"  else",
+			"    [fields[:year], data[:title]]",
+			"  end.compact.join(\" \")",
+			"end",
 		],
-		"description": "price_snippet"
+		"description": "title_snippet"
 	},
 
 	"debugger_snippet": {
 		"prefix": "de",
 		"body": [
-			"byebug",
+			"byebug"
 		],
 		"description": "debugger_snippet"
+	},
+
+
+	"rejector_snippet": {
+		"prefix": "rj",
+		"body": [
+			"data[:id] = ::MurmurHash3::V32.str_hash(Addressable::URI.parse(a[:href]).basename)",
+			"Rejector.validate_uniqueness!(:item_id, data[:id]) rescue next"
+		],
+		"description": "rejector_snippet"
+	},
+
+	"google_snippet": {
+		"prefix": "gg",
+		"body": [
+			"file = GoogleDrive.new(domain).download(\"file_id\")",
+			"table = Roo::Spreadsheet.open(file, extension: :xlsx)"
+		],
+		"description": "google_snippet"
 	}
 }
