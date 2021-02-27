@@ -65,7 +65,7 @@
 			"  else",
 			"    [fields[:year], data[:title]]",
 			"  end.compact.join(\" \")",
-			"end",
+			"end"
 		],
 		"description": "title_snippet"
 	},
@@ -75,7 +75,7 @@
 		"body": [
 			"field :image, service: true do",
 			"  xpath(\"\")",
-			"end",
+			"end"
 		],
 		"description": "img_snippet"
 	},
