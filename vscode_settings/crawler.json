@@ -70,6 +70,16 @@
 		"description": "title_snippet"
 	},
 
+	"img_snippet": {
+		"prefix": "img",
+		"body": [
+			"field :image, service: true do",
+			"  xpath(\"\")",
+			"end",
+		],
+		"description": "img_snippet"
+	},
+
 	"debugger_snippet": {
 		"prefix": "de",
 		"body": [

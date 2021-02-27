@@ -4,7 +4,7 @@
 #
 # Brew packages that I use
 #
-brew install imagemagick git postgres redis gnupg gnupg2 libmaxminddb wget vips
+brew install imagemagick git postgres redis gnupg gnupg2 libmaxminddb wget vips automake autoconf libtool
 # run: brew services list
 brew tap homebrew/services
 
@@ -26,6 +26,7 @@ sudo spctl --master-disable
 sudo pmset -c autopoweroff 0
 
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+codesign --remove-signature /Applications/Visual\ Studio\ Code.app/Contents/Frameworks/Code\ Helper\ \(Renderer\).app
 
 printf ".DS_Store\nThumbs.db\n.idea\/" >> ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
