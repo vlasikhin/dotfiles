@@ -22,8 +22,8 @@
   "gruvbox_tabs_autowidth": true,
   "gruvbox_tabs_xxs": true,
   "gruvbox_underline_active_tab": true,
+  "highlight_line": true,
   "ignored_packages":
-
   [
     "Vintage"
   ],
