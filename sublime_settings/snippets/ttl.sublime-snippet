@@ -1,0 +1,15 @@
+<snippet>
+  <content><![CDATA[
+field :title do
+  if fields[:manufacturer] && fields[:model]
+    fields.values_at(:year, :manufacturer, :model)
+  else
+    [fields[:year], data[:title]]
+  end.compact.join(" ")
+end
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>ttl</tabTrigger>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.ruby</scope>
+</snippet>
