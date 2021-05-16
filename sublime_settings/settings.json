@@ -2,8 +2,8 @@
   "block_caret": true,
   "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Hard) NDC.sublime-color-scheme",
   "ensure_newline_at_eof_on_save": true,
-  "open_files_in_new_window": true,
   "font_face": "Fira Code",
+  "draw_indent_guides": false,
   "font_options":
   [
     "no_liga",
@@ -11,17 +11,25 @@
     "no_calt"
   ],
   "font_size": 13,
-  "git_gutter_show_line_annotation": false,
   "gruvbox_accent_blue": true,
   "gruvbox_command_palette_compact": true,
   "gruvbox_folder_icons_large": true,
   "gruvbox_highlight_active_tree_row": true,
   "gruvbox_sidebar_label_bold": true,
+  "gruvbox_sidebar_indent_xs": true,
+  "gruvbox_sidebar_compact": true,
+  "gruvbox_command_palette_cramped": true,
   "gruvbox_statusbar_font_size_10": true,
   "gruvbox_statusbar_xxs": true,
   "gruvbox_tabs_autowidth": true,
   "gruvbox_tabs_xxs": true,
   "gruvbox_underline_active_tab": true,
+  "gruvbox_underline_active_tab_thick": true,
+  "gruvbox_panel_xxs": true,
+  "gruvbox_enable_pane_borders": true,
+  "gruvbox_enable_sidebar_border": true,
+  "gruvbox_enable_statusbar_border": true,
+  "gruvbox_enable_tab_borders": true,
   "highlight_line": true,
   "ignored_packages":
   [
