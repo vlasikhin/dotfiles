@@ -26,7 +26,7 @@ sudo spctl --master-disable
 sudo pmset -c autopoweroff 0
 
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
-codesign --remove-signature /Applications/Visual\ Studio\ Code.app/Contents/Frameworks/Code\ Helper\ \(Renderer\).app
+echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.zprofile
 
 printf ".DS_Store\nThumbs.db\n.idea\/" >> ~/.gitignore
 git config --global core.excludesfile ~/.gitignore
