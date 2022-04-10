@@ -10,7 +10,7 @@ brew tap homebrew/services
 
 # Some cask packages
 brew tap caskroom/fonts
-brew cask install font-fira-code
+brew install --cask font-fira-code
 brew install --cask chromedriver
 brew install --cask phantomjs
 

@@ -1,16 +1,20 @@
 {
-  "block_caret": true,
+  "auto_complete": true,
+  "auto_complete_commit_on_tab": true,
   "ensure_newline_at_eof_on_save": true,
   "font_face": "Fira Code",
-  "draw_indent_guides": false,
+  "caret_extra_top": 1,
+  "caret_extra_bottom": 1,
+   "hide_tab_scrolling_buttons": true,
   "font_options":
   [
     "no_liga",
     "no_clig",
     "no_calt"
   ],
-  "font_size": 13,
+  "font_size": 14,
   "highlight_line": true,
+  "detect_indentation": true,
   "ignored_packages":
   [
     "Vintage",
@@ -20,13 +24,16 @@
     125
   ],
   "save_on_focus_lost": true,
+  "scroll_past_end": true,
+  "highlight_modified_tabs": true,
   "show_encoding": true,
   "show_line_annotation": false,
   "show_status_bar_text": true,
   "tab_size": 2,
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": true,
+  "index_exclude_patterns": ["*.log", "log/**", "*.csv"],
   "word_wrap": false,
-  "theme": "auto",
-  "color_scheme": "Packages/Alabaster Color Scheme/Alabaster.sublime-color-scheme",
+  "color_scheme": "Mariana.sublime-color-scheme",
+  "theme": "Adaptive.sublime-theme",
 }
