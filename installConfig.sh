@@ -45,3 +45,7 @@ defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-ty
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 killall Dock
+
+
+# m1 instalation
+# https://github.com/rbenv/ruby-build/issues/1691#issuecomment-983122764
