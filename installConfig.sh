@@ -49,3 +49,6 @@ killall Dock
 
 # m1 instalation
 # https://github.com/rbenv/ruby-build/issues/1691#issuecomment-983122764
+
+# old ruby bersions m1
+# https://www.davidseek.com/ruby-on-m1/
