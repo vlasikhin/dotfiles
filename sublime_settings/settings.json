@@ -1,18 +1,19 @@
 {
   "auto_complete": true,
   "auto_complete_commit_on_tab": true,
+  "block_caret": true,
   "ensure_newline_at_eof_on_save": true,
   "font_face": "Fira Code",
   "caret_extra_top": 1,
   "caret_extra_bottom": 1,
-   "hide_tab_scrolling_buttons": true,
+  "hide_tab_scrolling_buttons": true,
   "font_options":
   [
     "no_liga",
     "no_clig",
     "no_calt"
   ],
-  "font_size": 14,
+  "font_size": 13,
   "highlight_line": true,
   "detect_indentation": true,
   "ignored_packages":
@@ -34,6 +35,6 @@
   "trim_trailing_white_space_on_save": true,
   "index_exclude_patterns": ["*.log", "log/**", "*.csv"],
   "word_wrap": false,
-  "color_scheme": "Mariana.sublime-color-scheme",
+  "color_scheme": "Alabaster.sublime-color-scheme",
   "theme": "Adaptive.sublime-theme",
 }

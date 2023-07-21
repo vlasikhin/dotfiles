@@ -6,9 +6,26 @@
 
 ### Installed Pacages
 
-* Alabaster Color Scheme"
-* FileIcons
-* FileManager
 * Package Control
-* Ruby Slim
-* SortBy
+* Alabaster Color Scheme
+* FileIcons
+* rubyfmt
+
+settings -> key bindings:
+
+```json
+[
+  { "keys": ["super+`"], "command": "goto_definition" },
+  { "keys": ["super+="], "command": "reveal_in_side_bar"}
+]
+```
+
+Sublime Text -> Preferences -> Package Settings -> Rubyfmt -> Settings - User
+
+```ruby
+{
+  "ruby_executable": "ruby",
+  "rubyfmt_executable": "rubyfmt",
+  "format_on_save": true,
+}
+```

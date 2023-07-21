@@ -1,109 +1,16 @@
 {
-	"crawler": {
-		"prefix": "crw",
-		"body": [
-			"class CHANGE_ME < ApplicationCrawler | MachineryhostCrawler",
-			"  domain \"\"",
-			"  start_urls \"\"",
-			"  seller company: \"\",",
-			"         address: \"\",",
-			"         phone:   \"\",",
-			"         website: \"\"",
-			"",
-			"  def parse",
-			"    byebug",
-			"    xpath(\"\").each do |a|",
-			"      yield request(url: a[:href], callback: :parse_category, data: data)",
-			"    end",
-			"  end",
-			"",
-			"  def parse_category",
-			"    xpath(\"\").each do |a|",
-			"      yield request(url: a[:href], callback: :parse_listing, data: data)",
-			"    end",
-			"  end",
-			"",
-			"  def parse_listing",
-			"    field :id,          value: ::MurmurHash3::V32.str_hash(url.basename)",
-			"    field :url,         value: url.to_s",
-			"    field :domain,      value: domain",
-			"    field :condition,   value: \"used\"",
-			"    field :location,    value: \"\"",
-			"    field :price,       value: PriceHelper.parse(\"0\").to_s",
-			"    field :categories,  value: categories.to_a",
-			"    field :title,       value: fields.values_at(:year, :manufacturer, :model).compact.join(\" \")",
-			"",
-			"",
-			"    field :image, value: xpath(\"\"), service: true",
-			"",
-			"    yield fields",
-			"  end",
-			"end"
-		],
-		"description": "crawler_snippet"
-	},
-
-	"i18_snippet": {
-		"prefix": "i18",
-		"body": [
-			"require_relative \"\"",
-			"",
-			"class CHANGE_ME < CHANGE_ME",
-			"  domain \"\", lang: CHANGE_ME",
-			"  translate from: CHANGE_ME",
-			"end"
-		],
-		"description": "i18_snippet"
-	},
-
-	"title_snippet": {
-		"prefix": "ttl",
-		"body": [
-			"field :title do",
-			"  if fields[:manufacturer] && fields[:model]",
-			"    fields.values_at(:year, :manufacturer, :model)",
-			"  else",
-			"    [fields[:year], data[:title]]",
-			"  end.compact.join(\" \")",
-			"end"
-		],
-		"description": "title_snippet"
-	},
-
-	"img_snippet": {
-		"prefix": "img",
-		"body": [
-			"field :image, service: true do",
-			"  xpath(\"\")",
-			"end"
-		],
-		"description": "img_snippet"
-	},
-
-	"debugger_snippet": {
+	"debugger_snippet_01": {
 		"prefix": "de",
 		"body": [
 			"byebug"
 		],
 		"description": "debugger_snippet"
 	},
-
-
-	"rejector_snippet": {
-		"prefix": "rj",
+	"debugger_snippet_02": {
+		"prefix": "dee",
 		"body": [
-			"data[:id] = ::MurmurHash3::V32.str_hash(Addressable::URI.parse(a[:href]).basename)",
-			"Rejector.validate_uniqueness!(:item_id, data[:id]) rescue next"
+			"binding.pry"
 		],
-		"description": "rejector_snippet"
-	},
-
-	"google_snippet": {
-		"prefix": "gg",
-		"body": [
-			"file = GoogleDrive.new(domain).download(\"file_id\")",
-			"table = Roo::Spreadsheet.open(file, extension: :xlsx)"
-		],
-		"description": "google_snippet"
+		"description": "debugger_snippet"
 	}
 }
