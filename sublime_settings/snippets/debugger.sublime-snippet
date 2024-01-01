@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[
-byebug
+debugger
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
   <tabTrigger>de</tabTrigger>

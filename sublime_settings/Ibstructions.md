@@ -7,7 +7,6 @@
 ### Installed Pacages
 
 * Package Control
-* Alabaster Color Scheme
 * FileIcons
 * rubyfmt
 
@@ -26,6 +25,6 @@ Sublime Text -> Preferences -> Package Settings -> Rubyfmt -> Settings - User
 {
   "ruby_executable": "ruby",
   "rubyfmt_executable": "rubyfmt",
-  "format_on_save": true,
+  "format_on_save": false,
 }
 ```

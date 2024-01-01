@@ -11,9 +11,7 @@ brew tap homebrew/services
 # Some cask packages
 brew tap caskroom/fonts
 brew install --cask font-fira-code
-brew install --cask chromedriver
-brew install --cask phantomjs
-
+s
 #
 # Settings
 #
@@ -24,6 +22,7 @@ sudo spctl --master-disable
 # отключает долгий выход из сна
 # проверить статус: sudo pmset -g
 sudo pmset -c autopoweroff 0
+sudo defaults write /Library/Preferences/FeatureFlags/Domain/UIKit.plist redesigned_text_cursor -dict-add Enabled -bool NO
 
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.zprofile
@@ -37,7 +36,7 @@ git config --global alias.br branch
 git config --global alias.ci commit -m
 git config --global alias.st status
 git config --global user.name "Pavel Vlasikhin"
-git config --global user.email pavel.vlasikhin@gmail.com
+git config --global user.email pavel@vlasikhin.com
 
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
@@ -46,9 +45,8 @@ defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-ty
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 killall Dock
 
-
 # m1 instalation
 # https://github.com/rbenv/ruby-build/issues/1691#issuecomment-983122764
 
-# old ruby bersions m1
+# old ruby versions m1
 # https://www.davidseek.com/ruby-on-m1/
