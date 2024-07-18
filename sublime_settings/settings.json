@@ -3,7 +3,7 @@
   "auto_complete_commit_on_tab": true,
   "block_caret": false,
   "ensure_newline_at_eof_on_save": true,
-  "font_face": "Fira Code Retina",
+  "font_face": "Fira Code Medium",
   "caret_extra_top": 1,
   "caret_extra_bottom": 1,
   "hide_tab_scrolling_buttons": true,
@@ -32,11 +32,9 @@
   "trim_trailing_white_space_on_save": true,
   "index_exclude_patterns": ["*.log", "log/**", "*.csv"],
   "word_wrap": false,
-  "color_scheme": "gruvbox (Dark) (Medium).sublime-color-scheme",
-  "theme": "gruvbox.sublime-theme",
-  "bold_folder_labels": false,
+  "color_scheme": "vpa-light.sublime-color-scheme",
+  "bold_folder_labels": true,
   "popup_shadows": false,
-
   "ignored_packages":
   [
     "Vintage",
@@ -45,13 +43,7 @@
   "light_color_scheme": "vpa-light.sublime-color-scheme",
   "dark_theme": "Default.sublime-theme",
   "light_theme": "Default.sublime-theme",
-  "gruvbox_accent_orange": true,
-  "gruvbox_autocomplete_cramped": true,
-  "gruvbox_sidebar_compact": true,
-  "gruvbox_sidebar_font_size_12": true,
-  "gruvbox_command_palette_cramped": true,
-  "gruvbox_statusbar_xs": true,
-  "gruvbox_tabs_xxs": true,
-  "gruvbox_tabs_font_size_12": true,
-  "gruvbox_panel_xxs": true,
+  "theme": "Adaptive.sublime-theme",
+  "open_files_in_new_window": false,
+  "index_files": true
 }

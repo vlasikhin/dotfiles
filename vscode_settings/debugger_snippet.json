@@ -2,7 +2,7 @@
 	"debugger_snippet_01": {
 		"prefix": "de",
 		"body": [
-			"byebug"
+			"debugger"
 		],
 		"description": "debugger_snippet"
 	},
