@@ -1,0 +1,367 @@
+{
+    "extends": "Adaptive.sublime-theme",
+    "variables": {
+        // Base colors from One Light
+        "bg_color": "#FAFAFA",
+        "fg_color": "#383A42",
+        "accent_color": "#526FFF",
+
+        // Derived colors
+        "bg_dark": "#EAEAEB",
+        "bg_darker": "#DBDBDC",
+        "bg_light": "#FFFFFF",
+
+        "fg_muted": "#696C77",
+        "fg_subtle": "#A0A1A7",
+
+        // Semantic colors
+        "blue": "#4078F2",
+        "green": "#50A14F",
+        "red": "#E45649",
+        "orange": "#C18401",
+        "purple": "#A626A4",
+        "cyan": "#0184BC"
+    },
+    "rules": [
+        // ============ TITLE BAR ============
+        {
+            "class": "title_bar",
+            "bg": "var(bg_color)"
+        },
+
+        // ============ SIDEBAR ============
+        {
+            "class": "sidebar_container",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "sidebar_tree",
+            "row_padding": [16, 4, 12, 4]
+        },
+        {
+            "class": "sidebar_heading",
+            "color": "var(fg_muted)",
+            "font.bold": true
+        },
+        {
+            "class": "sidebar_label",
+            "color": "var(fg_color)"
+        },
+        {
+            "class": "sidebar_label",
+            "parents": [{"class": "tree_row", "attributes": ["hover"]}],
+            "color": "var(fg_color)"
+        },
+        {
+            "class": "sidebar_label",
+            "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+            "color": "var(fg_color)"
+        },
+        {
+            "class": "tree_row",
+            "layer0.tint": "var(bg_color)",
+            "layer0.opacity": 0.0
+        },
+        {
+            "class": "tree_row",
+            "attributes": ["hover"],
+            "layer0.tint": "var(bg_dark)",
+            "layer0.opacity": 1.0
+        },
+        {
+            "class": "tree_row",
+            "attributes": ["selected"],
+            "layer0.tint": "var(bg_darker)",
+            "layer0.opacity": 1.0
+        },
+        {
+            "class": "disclosure_button_control",
+            "layer0.tint": "var(fg_subtle)"
+        },
+        {
+            "class": "disclosure_button_control",
+            "attributes": ["hover"],
+            "layer0.tint": "var(fg_color)"
+        },
+
+        // ============ TABS ============
+        {
+            "class": "tabset_control",
+            "layer0.tint": "var(bg_dark)"
+        },
+        {
+            "class": "tab_control",
+            "layer0.tint": "var(bg_dark)"
+        },
+        {
+            "class": "tab_control",
+            "attributes": ["selected"],
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "tab_control",
+            "attributes": ["hover"],
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "tab_label",
+            "fg": "var(fg_muted)"
+        },
+        {
+            "class": "tab_label",
+            "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+            "fg": "var(fg_color)"
+        },
+        {
+            "class": "tab_label",
+            "parents": [{"class": "tab_control", "attributes": ["hover"]}],
+            "fg": "var(fg_color)"
+        },
+        {
+            "class": "tab_close_button",
+            "layer0.tint": "var(fg_subtle)"
+        },
+        {
+            "class": "tab_close_button",
+            "attributes": ["hover"],
+            "layer0.tint": "var(fg_color)"
+        },
+        {
+            "class": "tab_close_button",
+            "parents": [{"class": "tab_control", "attributes": ["dirty"]}],
+            "layer0.tint": "var(orange)"
+        },
+
+        // ============ STATUS BAR ============
+        {
+            "class": "status_bar",
+            "layer0.tint": "var(bg_dark)"
+        },
+        {
+            "class": "label_control",
+            "parents": [{"class": "status_bar"}],
+            "color": "var(fg_muted)"
+        },
+
+        // ============ PANELS ============
+        {
+            "class": "panel_control",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "panel_control",
+            "parents": [{"class": "switch_project_window"}],
+            "layer0.tint": "var(bg_color)"
+        },
+
+        // ============ QUICK PANEL ============
+        {
+            "class": "quick_panel",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "quick_panel_row",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "quick_panel_row",
+            "attributes": ["hover"],
+            "layer0.tint": "var(bg_dark)"
+        },
+        {
+            "class": "quick_panel_row",
+            "attributes": ["selected"],
+            "layer0.tint": "var(bg_darker)"
+        },
+        {
+            "class": "quick_panel_label",
+            "fg": "var(fg_color)",
+            "match_fg": "var(accent_color)",
+            "selected_fg": "var(fg_color)",
+            "selected_match_fg": "var(accent_color)"
+        },
+        {
+            "class": "quick_panel_path_label",
+            "fg": "var(fg_subtle)",
+            "match_fg": "var(blue)",
+            "selected_fg": "var(fg_muted)",
+            "selected_match_fg": "var(accent_color)"
+        },
+        {
+            "class": "quick_panel_detail_label",
+            "fg": "var(fg_subtle)"
+        },
+
+        // ============ MINI HTML ============
+        {
+            "class": "mini_quick_panel_row",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "mini_quick_panel_row",
+            "attributes": ["hover"],
+            "layer0.tint": "var(bg_dark)"
+        },
+        {
+            "class": "mini_quick_panel_row",
+            "attributes": ["selected"],
+            "layer0.tint": "var(bg_darker)"
+        },
+
+        // ============ AUTO COMPLETE ============
+        {
+            "class": "auto_complete",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "auto_complete_label",
+            "fg": "var(fg_color)",
+            "match_fg": "var(accent_color)",
+            "selected_fg": "var(fg_color)",
+            "selected_match_fg": "var(accent_color)"
+        },
+        {
+            "class": "table_row",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "table_row",
+            "attributes": ["selected"],
+            "layer0.tint": "var(bg_darker)"
+        },
+
+        // ============ BUTTONS ============
+        {
+            "class": "button_control",
+            "layer0.tint": "var(bg_dark)"
+        },
+        {
+            "class": "button_control",
+            "attributes": ["hover"],
+            "layer0.tint": "var(bg_darker)"
+        },
+        {
+            "class": "button_control",
+            "attributes": ["pressed"],
+            "layer0.tint": "var(accent_color)"
+        },
+
+        // ============ TEXT INPUT ============
+        {
+            "class": "text_line_control",
+            "layer0.tint": "var(bg_light)",
+            "color": "var(fg_color)"
+        },
+
+        // ============ SCROLLBAR ============
+        {
+            "class": "scroll_bar_control",
+            "layer0.tint": "var(bg_color)"
+        },
+        {
+            "class": "puck_control",
+            "layer0.tint": "var(bg_darker)"
+        },
+        {
+            "class": "puck_control",
+            "attributes": ["hover"],
+            "layer0.tint": "var(fg_subtle)"
+        },
+
+        // ============ MINIMAP ============
+        {
+            "class": "minimap_control",
+            "viewport_color": "var(fg_subtle)",
+            "viewport_opacity": 0.2
+        },
+
+        // ============ FOLD BUTTON ============
+        {
+            "class": "fold_button_control",
+            "layer0.tint": "var(fg_subtle)"
+        },
+        {
+            "class": "fold_button_control",
+            "attributes": ["hover"],
+            "layer0.tint": "var(fg_color)"
+        },
+        {
+            "class": "fold_button_control",
+            "attributes": ["expanded"],
+            "layer0.tint": "var(fg_muted)"
+        },
+
+        // ============ TOOLTIP ============
+        {
+            "class": "tool_tip_control",
+            "layer0.tint": "var(bg_light)"
+        },
+        {
+            "class": "tool_tip_label_control",
+            "color": "var(fg_color)"
+        },
+
+        // ============ DIALOG ============
+        {
+            "class": "dialog",
+            "layer0.tint": "var(bg_color)"
+        },
+
+        // ============ PROGRESS BAR ============
+        {
+            "class": "progress_bar_control",
+            "layer0.tint": "var(bg_dark)"
+        },
+        {
+            "class": "progress_gauge_control",
+            "layer0.tint": "var(accent_color)"
+        },
+
+        // ============ VCS COLORS ============
+        {
+            "class": "vcs_status_badge",
+            "parents": [{"class": "file_system_entry", "attributes": ["untracked"]}],
+            "layer0.tint": "var(green)"
+        },
+        {
+            "class": "vcs_status_badge",
+            "parents": [{"class": "file_system_entry", "attributes": ["modified"]}],
+            "layer0.tint": "var(orange)"
+        },
+        {
+            "class": "vcs_status_badge",
+            "parents": [{"class": "file_system_entry", "attributes": ["added"]}],
+            "layer0.tint": "var(green)"
+        },
+        {
+            "class": "vcs_status_badge",
+            "parents": [{"class": "file_system_entry", "attributes": ["staged"]}],
+            "layer0.tint": "var(cyan)"
+        },
+        {
+            "class": "vcs_status_badge",
+            "parents": [{"class": "file_system_entry", "attributes": ["deleted"]}],
+            "layer0.tint": "var(red)"
+        },
+        {
+            "class": "vcs_status_badge",
+            "parents": [{"class": "file_system_entry", "attributes": ["missing"]}],
+            "layer0.tint": "var(red)"
+        },
+        {
+            "class": "sidebar_label",
+            "parents": [{"class": "file_system_entry", "attributes": ["untracked"]}],
+            "color": "var(green)"
+        },
+        {
+            "class": "sidebar_label",
+            "parents": [{"class": "file_system_entry", "attributes": ["modified"]}],
+            "color": "var(orange)"
+        },
+        {
+            "class": "sidebar_label",
+            "parents": [{"class": "file_system_entry", "attributes": ["added"]}],
+            "color": "var(green)"
+        }
+    ]
+}

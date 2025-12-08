@@ -1,0 +1,815 @@
+{
+    "name": "One Light",
+    "author": "Based on Atom's One Light by GitHub/Atom, ported for Sublime Text",
+    "variables": {
+        // Background colors
+        "bg": "#FAFAFA",
+        "bg-1": "#F0F0F1",
+        "bg-2": "#EAEAEB",
+        "gutter": "#FAFAFA",
+        "gutter-fg": "#9D9D9F",
+
+        // Foreground / Monochrome
+        "fg": "#383A42",
+        "mono-1": "#383A42",
+        "mono-2": "#696C77",
+        "mono-3": "#A0A1A7",
+
+        // Accent colors (One Light palette)
+        "cyan": "#0184BC",
+        "blue": "#4078F2",
+        "purple": "#A626A4",
+        "green": "#50A14F",
+        "red-1": "#E45649",
+        "red-2": "#CA1243",
+        "orange-1": "#986801",
+        "orange-2": "#C18401",
+
+        // UI colors
+        "accent": "#526FFF",
+        "selection": "#E5E5E6",
+        "line-highlight": "#F2F2F2",
+        "guide": "#D3D3D5",
+        "guide-active": "#C9C9CB",
+        "find-highlight": "#526FFF33",
+        "bracket-match": "#526FFF44"
+    },
+    "globals": {
+        "background": "var(bg)",
+        "foreground": "var(fg)",
+        "caret": "var(accent)",
+        "block_caret": "var(accent)",
+        "block_caret_border": "var(accent)",
+        "block_caret_corner_style": "round",
+        "invisibles": "var(mono-3)",
+        "line_highlight": "var(line-highlight)",
+        "selection": "var(selection)",
+        "selection_border": "var(selection)",
+        "selection_border_width": "1",
+        "inactive_selection": "#E5E5E680",
+        "selection_corner_style": "round",
+        "selection_corner_radius": "2",
+
+        // Gutter
+        "gutter": "var(gutter)",
+        "gutter_foreground": "var(gutter-fg)",
+        "gutter_foreground_highlight": "var(mono-1)",
+        "line_diff_added": "var(green)",
+        "line_diff_modified": "var(orange-2)",
+        "line_diff_deleted": "var(red-1)",
+
+        // Find & Replace
+        "highlight": "var(find-highlight)",
+        "find_highlight": "#FFDF5D",
+        "find_highlight_foreground": "#000000",
+
+        // Guides
+        "guide": "var(guide)",
+        "active_guide": "var(guide-active)",
+        "stack_guide": "var(guide)",
+
+        // Brackets
+        "brackets_options": "underline",
+        "brackets_foreground": "var(accent)",
+        "bracket_contents_options": "underline",
+        "bracket_contents_foreground": "var(accent)",
+
+        // Tags
+        "tags_options": "stippled_underline",
+        "tags_foreground": "var(purple)",
+
+        // Shadow (for scroll)
+        "shadow": "#00000010",
+        "shadow_width": "4",
+
+        // Minimap
+        "minimap_border": "var(guide)",
+
+        // Accents
+        "accent": "var(accent)",
+        "fold_marker": "var(orange-2)",
+
+        // Popups
+        "popup_css": "html { background-color: #FAFAFA; color: #383A42; } a { color: #4078F2; }"
+    },
+    "rules": [
+        // ----- Comments -----
+        {
+            "name": "Comment",
+            "scope": "comment, punctuation.definition.comment",
+            "foreground": "var(mono-3)",
+            "font_style": "italic"
+        },
+
+        // ----- Constants -----
+        {
+            "name": "Constant",
+            "scope": "constant",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "Constant - Numeric",
+            "scope": "constant.numeric",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "Constant - Character",
+            "scope": "constant.character",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "Constant - Escape",
+            "scope": "constant.character.escape",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Constant - Language",
+            "scope": "constant.language",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "Constant - Other",
+            "scope": "constant.other",
+            "foreground": "var(orange-1)"
+        },
+
+        // ----- Entities -----
+        {
+            "name": "Entity - Name",
+            "scope": "entity.name",
+            "foreground": "var(orange-2)"
+        },
+        {
+            "name": "Entity - Function",
+            "scope": "entity.name.function",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Entity - Class",
+            "scope": "entity.name.class, entity.name.type.class",
+            "foreground": "var(orange-2)"
+        },
+        {
+            "name": "Entity - Type",
+            "scope": "entity.name.type",
+            "foreground": "var(orange-2)"
+        },
+        {
+            "name": "Entity - Tag",
+            "scope": "entity.name.tag",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Entity - Section",
+            "scope": "entity.name.section",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Entity - Attribute",
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "Entity - Inherited Class",
+            "scope": "entity.other.inherited-class",
+            "foreground": "var(green)"
+        },
+
+        // ----- Invalid -----
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "foreground": "#FFFFFF",
+            "background": "var(red-1)"
+        },
+        {
+            "name": "Invalid - Deprecated",
+            "scope": "invalid.deprecated",
+            "foreground": "#FFFFFF",
+            "background": "var(purple)"
+        },
+
+        // ----- Keywords -----
+        {
+            "name": "Keyword",
+            "scope": "keyword",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Keyword - Control",
+            "scope": "keyword.control",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Keyword - Operator",
+            "scope": "keyword.operator",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Keyword - Operator Word",
+            "scope": "keyword.operator.word",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Keyword - Other",
+            "scope": "keyword.other",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Keyword - Declaration",
+            "scope": "keyword.declaration",
+            "foreground": "var(purple)"
+        },
+
+        // ----- Markup -----
+        {
+            "name": "Markup - Heading",
+            "scope": "markup.heading, markup.heading entity.name",
+            "foreground": "var(red-1)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markup - List",
+            "scope": "markup.list",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Markup - Bold",
+            "scope": "markup.bold",
+            "foreground": "var(orange-1)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markup - Italic",
+            "scope": "markup.italic",
+            "foreground": "var(purple)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markup - Underline",
+            "scope": "markup.underline",
+            "font_style": "underline"
+        },
+        {
+            "name": "Markup - Raw/Code",
+            "scope": "markup.raw, markup.raw.inline",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Markup - Quote",
+            "scope": "markup.quote",
+            "foreground": "var(green)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markup - Link",
+            "scope": "markup.underline.link",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Markup - Inserted",
+            "scope": "markup.inserted",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Markup - Deleted",
+            "scope": "markup.deleted",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Markup - Changed",
+            "scope": "markup.changed",
+            "foreground": "var(orange-2)"
+        },
+
+        // ----- Meta -----
+        {
+            "name": "Meta - Function Call",
+            "scope": "meta.function-call variable.function",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Meta - Class",
+            "scope": "meta.class",
+            "foreground": "var(mono-1)"
+        },
+
+        // ----- Punctuation -----
+        {
+            "name": "Punctuation",
+            "scope": "punctuation",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Punctuation - Definition String",
+            "scope": "punctuation.definition.string",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Punctuation - Definition Tag",
+            "scope": "punctuation.definition.tag",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Punctuation - Definition Comment",
+            "scope": "punctuation.definition.comment",
+            "foreground": "var(mono-3)"
+        },
+        {
+            "name": "Punctuation - Accessor",
+            "scope": "punctuation.accessor",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Punctuation - Separator",
+            "scope": "punctuation.separator",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Punctuation - Terminator",
+            "scope": "punctuation.terminator",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Punctuation - Section",
+            "scope": "punctuation.section",
+            "foreground": "var(mono-1)"
+        },
+
+        // ----- Storage -----
+        {
+            "name": "Storage",
+            "scope": "storage",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Storage - Type",
+            "scope": "storage.type",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Storage - Modifier",
+            "scope": "storage.modifier",
+            "foreground": "var(purple)"
+        },
+
+        // ----- Strings -----
+        {
+            "name": "String",
+            "scope": "string",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "String - Template",
+            "scope": "string.template",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "String - Regexp",
+            "scope": "string.regexp",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "String - Quoted",
+            "scope": "string.quoted",
+            "foreground": "var(green)"
+        },
+
+        // ----- Support -----
+        {
+            "name": "Support",
+            "scope": "support",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Support - Function",
+            "scope": "support.function",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Support - Class",
+            "scope": "support.class",
+            "foreground": "var(orange-2)"
+        },
+        {
+            "name": "Support - Type",
+            "scope": "support.type",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Support - Constant",
+            "scope": "support.constant",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "Support - Variable",
+            "scope": "support.variable",
+            "foreground": "var(orange-1)"
+        },
+
+        // ----- Variables -----
+        {
+            "name": "Variable",
+            "scope": "variable",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Variable - Parameter",
+            "scope": "variable.parameter",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Variable - Language",
+            "scope": "variable.language",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Variable - Function",
+            "scope": "variable.function",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Variable - Other Member",
+            "scope": "variable.other.member",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Variable - Other Constant",
+            "scope": "variable.other.constant",
+            "foreground": "var(orange-1)"
+        },
+
+        // ========== LANGUAGE SPECIFIC ==========
+
+        // ----- CSS -----
+        {
+            "name": "CSS - Property Name",
+            "scope": "source.css support.type.property-name, source.css support.type.vendored.property-name",
+            "foreground": "var(mono-2)"
+        },
+        {
+            "name": "CSS - Property Value",
+            "scope": "source.css support.constant.property-value",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "CSS - Selector",
+            "scope": "source.css entity.name.tag",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "CSS - ID Selector",
+            "scope": "source.css entity.other.attribute-name.id",
+            "foreground": "var(orange-2)"
+        },
+        {
+            "name": "CSS - Class Selector",
+            "scope": "source.css entity.other.attribute-name.class",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "CSS - Pseudo Class/Element",
+            "scope": "source.css entity.other.pseudo-class, source.css entity.other.pseudo-element",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "CSS - Units",
+            "scope": "source.css keyword.other.unit",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "CSS - Color",
+            "scope": "source.css constant.other.color",
+            "foreground": "var(cyan)"
+        },
+
+        // ----- SCSS/SASS -----
+        {
+            "name": "SCSS - Variable",
+            "scope": "source.scss variable, source.sass variable",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "SCSS - Keyword",
+            "scope": "source.scss keyword.control, source.sass keyword.control",
+            "foreground": "var(purple)"
+        },
+
+        // ----- HTML -----
+        {
+            "name": "HTML - Tag",
+            "scope": "text.html entity.name.tag",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "HTML - Attribute",
+            "scope": "text.html entity.other.attribute-name",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "HTML - DOCTYPE",
+            "scope": "text.html meta.tag.sgml.doctype",
+            "foreground": "var(mono-3)"
+        },
+
+        // ----- JavaScript/TypeScript -----
+        {
+            "name": "JS/TS - Function Declaration",
+            "scope": "source.js entity.name.function, source.ts entity.name.function",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "JS/TS - Object Key",
+            "scope": "source.js meta.object-literal.key, source.ts meta.object-literal.key",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "JS/TS - Template String Punctuation",
+            "scope": "source.js punctuation.definition.template-expression, source.ts punctuation.definition.template-expression",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "JS/TS - This",
+            "scope": "source.js variable.language.this, source.ts variable.language.this",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "JS/TS - Import/Export",
+            "scope": "source.js keyword.control.import, source.ts keyword.control.import, source.js keyword.control.export, source.ts keyword.control.export",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "JS/TS - Arrow Function",
+            "scope": "source.js storage.type.function.arrow, source.ts storage.type.function.arrow",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "TypeScript - Type",
+            "scope": "source.ts support.type, source.tsx support.type",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "TypeScript - Type Annotation",
+            "scope": "source.ts meta.type.annotation, source.tsx meta.type.annotation",
+            "foreground": "var(cyan)"
+        },
+
+        // ----- JSON -----
+        {
+            "name": "JSON - Key",
+            "scope": "source.json meta.structure.dictionary.json string.quoted.double.json",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "JSON - String Value",
+            "scope": "source.json meta.structure.dictionary.value.json string.quoted.double.json",
+            "foreground": "var(green)"
+        },
+
+        // ----- Markdown -----
+        {
+            "name": "Markdown - Heading",
+            "scope": "text.html.markdown markup.heading",
+            "foreground": "var(red-1)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown - Link Text",
+            "scope": "text.html.markdown meta.link.inline.description",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Markdown - Link URL",
+            "scope": "text.html.markdown markup.underline.link",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Markdown - Code",
+            "scope": "text.html.markdown markup.raw",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Markdown - Fenced Code",
+            "scope": "text.html.markdown markup.raw.block.fenced",
+            "background": "#F5F5F5"
+        },
+        {
+            "name": "Markdown - List Bullet",
+            "scope": "text.html.markdown punctuation.definition.list_item",
+            "foreground": "var(red-1)"
+        },
+
+        // ----- Python -----
+        {
+            "name": "Python - Self",
+            "scope": "source.python variable.language.special.self",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Python - Function Magic",
+            "scope": "source.python support.function.magic",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Python - Decorator",
+            "scope": "source.python meta.annotation entity.name.function",
+            "foreground": "var(orange-2)"
+        },
+        {
+            "name": "Python - Decorator @",
+            "scope": "source.python punctuation.definition.annotation",
+            "foreground": "var(orange-2)"
+        },
+
+        // ----- Ruby -----
+        {
+            "name": "Ruby - Symbol",
+            "scope": "source.ruby constant.other.symbol",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Ruby - Interpolation",
+            "scope": "source.ruby string.interpolated",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Ruby - Variable Instance",
+            "scope": "source.ruby variable.other.readwrite.instance",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Ruby - Variable Class",
+            "scope": "source.ruby variable.other.readwrite.class",
+            "foreground": "var(orange-2)"
+        },
+
+        // ----- PHP -----
+        {
+            "name": "PHP - Variable",
+            "scope": "source.php variable.other",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "PHP - This",
+            "scope": "source.php variable.language.this",
+            "foreground": "var(red-1)"
+        },
+
+        // ----- Go -----
+        {
+            "name": "Go - Package",
+            "scope": "source.go entity.name.package",
+            "foreground": "var(mono-1)"
+        },
+        {
+            "name": "Go - Import",
+            "scope": "source.go entity.name.import",
+            "foreground": "var(green)"
+        },
+
+        // ----- Rust -----
+        {
+            "name": "Rust - Macro",
+            "scope": "source.rust support.macro",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Rust - Lifetime",
+            "scope": "source.rust storage.modifier.lifetime",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "Rust - Attribute",
+            "scope": "source.rust meta.annotation",
+            "foreground": "var(mono-2)"
+        },
+
+        // ----- Shell -----
+        {
+            "name": "Shell - Variable",
+            "scope": "source.shell variable",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "Shell - Built-in",
+            "scope": "source.shell support.function",
+            "foreground": "var(cyan)"
+        },
+
+        // ----- YAML -----
+        {
+            "name": "YAML - Key",
+            "scope": "source.yaml entity.name.tag",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "YAML - Anchor",
+            "scope": "source.yaml entity.name.other.anchor, source.yaml punctuation.definition.anchor",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "YAML - Alias",
+            "scope": "source.yaml variable.other.alias, source.yaml punctuation.definition.alias",
+            "foreground": "var(green)"
+        },
+
+        // ----- SQL -----
+        {
+            "name": "SQL - Keyword",
+            "scope": "source.sql keyword",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "SQL - Function",
+            "scope": "source.sql support.function",
+            "foreground": "var(cyan)"
+        },
+
+        // ----- Diff -----
+        {
+            "name": "Diff - Header",
+            "scope": "source.diff meta.diff.header",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Diff - Range",
+            "scope": "source.diff meta.diff.range",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Diff - Inserted",
+            "scope": "source.diff markup.inserted",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Diff - Deleted",
+            "scope": "source.diff markup.deleted",
+            "foreground": "var(red-1)"
+        },
+
+        // ----- XML -----
+        {
+            "name": "XML - Tag",
+            "scope": "text.xml entity.name.tag, text.xml entity.name.tag.localname",
+            "foreground": "var(red-1)"
+        },
+        {
+            "name": "XML - Attribute",
+            "scope": "text.xml entity.other.attribute-name, text.xml entity.other.attribute-name.localname",
+            "foreground": "var(orange-1)"
+        },
+        {
+            "name": "XML - Namespace",
+            "scope": "text.xml entity.other.attribute-name.namespace",
+            "foreground": "var(orange-2)"
+        },
+
+        // ----- C/C++ -----
+        {
+            "name": "C/C++ - Preprocessor",
+            "scope": "source.c meta.preprocessor, source.c++ meta.preprocessor",
+            "foreground": "var(mono-2)"
+        },
+        {
+            "name": "C/C++ - Macro",
+            "scope": "source.c entity.name.function.preprocessor, source.c++ entity.name.function.preprocessor",
+            "foreground": "var(orange-2)"
+        },
+
+        // ----- Java -----
+        {
+            "name": "Java - Annotation",
+            "scope": "source.java storage.type.annotation",
+            "foreground": "var(orange-2)"
+        },
+        {
+            "name": "Java - This/Super",
+            "scope": "source.java variable.language",
+            "foreground": "var(red-1)"
+        },
+
+        // ----- Elixir -----
+        {
+            "name": "Elixir - Atom",
+            "scope": "source.elixir constant.other.symbol",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Elixir - Module",
+            "scope": "source.elixir entity.name.type.module",
+            "foreground": "var(orange-2)"
+        },
+
+        // ----- LaTeX -----
+        {
+            "name": "LaTeX - Command",
+            "scope": "text.tex support.function",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "LaTeX - Environment",
+            "scope": "text.tex variable.parameter",
+            "foreground": "var(orange-1)"
+        }
+    ]
+}
