@@ -39,8 +39,8 @@ touch ~/Library/Application\ Support/Sublime\ Text/Packages/Default/Side\ Bar.su
 settings -> key bindings:
 
 ```json
-[
-  { "keys": ["ctrl+`"], "command": "goto_definition" },
-  { "keys": ["super+="], "command": "reveal_in_side_bar"}
-]
+  [
+    { "keys": ["ctrl+`"], "command": "goto_definition" },
+    { "keys": ["super+="], "command": "reveal_in_side_bar"}
+  ]
 ```
