@@ -1,0 +1,46 @@
+# Theme and appearance
+theme = Atom One Light
+window-theme = auto
+macos-titlebar-style = tabs
+window-decoration = true
+window-padding-x = 8
+window-padding-y = 6
+window-padding-balance = true
+
+# Window
+window-height = 9999
+window-width = 9999
+maximize = true
+window-save-state = always
+confirm-close-surface = false
+
+# Font
+font-size = 14
+font-family = "JetBrains Mono Regular ExtraBold"
+font-thicken = true
+adjust-cell-height = 10%
+
+# Cursor
+cursor-color = #007acc
+cursor-text = #ffffff
+cursor-style = block
+cursor-style-blink = false
+
+# Selection and clipboard
+copy-on-select = clipboard
+selection-invert-fg-bg = true
+clipboard-paste-protection = false
+
+# Scrollback
+scrollback-limit = 100000
+
+# Shell integration
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title
+
+# macOS specific
+macos-option-as-alt = true
+macos-icon = custom-style
+macos-icon-ghost-color = #000000
+macos-icon-screen-color = #000000
+macos-icon-frame = plastic
