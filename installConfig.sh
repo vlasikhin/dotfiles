@@ -1,16 +1,13 @@
 #!/bin/sh
+set -e
 #
 # for the run use this file on the home directory: ./installConfig.sh
 
 
 # Brew packages that I use
-brew install imagemagick gnupg gnupg2 libmaxminddb vips automake autoconf libtool postgresql redis eza ngrok
-
-# run: brew services list
-brew tap homebrew/services
+brew install imagemagick gnupg libmaxminddb vips automake autoconf libtool postgresql redis eza ngrok
 
 # Some cask packages
-brew tap caskroom/fonts
 brew install --cask font-fira-code \
 raycast \
 onyx \
@@ -38,9 +35,12 @@ sudo spctl --master-disable
 sudo pmset -c autopoweroff 0
 
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
-echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.zprofile
+grep -qF 'Sublime Text.app/Contents/SharedSupport/bin' ~/.zprofile 2>/dev/null || echo 'export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"' >> ~/.zprofile
 
-printf ".DS_Store\nThumbs.db\n.idea" >> ~/.gitignore
+touch ~/.gitignore
+for pattern in .DS_Store Thumbs.db .idea; do
+    grep -qF "$pattern" ~/.gitignore || echo "$pattern" >> ~/.gitignore
+done
 git config --global core.excludesfile ~/.gitignore
 git config --global core.autocrlf input
 git config --global core.safecrlf true

@@ -36,7 +36,7 @@ scrollback-limit = 100000
 
 # Shell integration
 shell-integration = zsh
-shell-integration-features = cursor,sudo,title
+shell-integration-features = cursor,sudo,title,cwd
 
 # macOS specific
 macos-option-as-alt = true

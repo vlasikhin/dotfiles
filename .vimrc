@@ -5,7 +5,7 @@ filetype plugin indent on       " load file type plugins + indentation
 
 "" Tweaks
 set hidden                      " allow backgrounding buffers without writing them
-set number                      " line numbers aren't needed
+set number                      " show line numbers
 set scrolloff=3                 " have some context around the current line always on screen
 set history=200                 " remember more Ex commands
 set synmaxcol=800               " don't try to highlight long lines

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
+mkdir -p ~/.claude/
 cp settings.json ~/.claude/settings.json
-cp statusline.sh ~/.claude/statusline.sh
-chmod +x ~/.claude/statusline.sh
+install -m 755 statusline.sh ~/.claude/statusline.sh
