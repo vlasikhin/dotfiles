@@ -16,7 +16,7 @@ confirm-close-surface = false
 
 # Font
 font-size = 14
-font-family = "JetBrains Mono Regular ExtraBold"
+font-family = "SFMono-Medium"
 font-thicken = true
 adjust-cell-height = 10%
 
@@ -36,7 +36,7 @@ scrollback-limit = 100000
 
 # Shell integration
 shell-integration = zsh
-shell-integration-features = cursor,sudo,title,cwd
+shell-integration-features = no-cursor,sudo,title
 
 # macOS specific
 macos-option-as-alt = true
