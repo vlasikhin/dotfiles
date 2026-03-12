@@ -8,7 +8,7 @@ set -e
 brew install postgresql redis eza
 
 # Some cask packages
-brew install --cask font-fira-code \
+brew install --cask ghostty \
 raycast \
 appcleaner \
 orbstack \
@@ -53,3 +53,7 @@ defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-ty
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 killall Dock
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cp "$SCRIPT_DIR/zsh_config/.zshrc" ~/.zshrc
+cp "$SCRIPT_DIR/zsh_config/vpa.zsh-theme" "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/vpa.zsh-theme"
