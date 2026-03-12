@@ -5,25 +5,21 @@ set -e
 
 
 # Brew packages that I use
-brew install imagemagick gnupg libmaxminddb vips automake autoconf libtool postgresql redis eza ngrok
+brew install postgresql redis eza
 
 # Some cask packages
 brew install --cask font-fira-code \
 raycast \
-onyx \
 appcleaner \
-easyfind \
 orbstack \
 outline-manager \
 slack \
-rubymine \
-goland \
-spotify \
 sublime-merge \
 sublime-text \
 transmission \
 vlc \
-arc
+claude
+
 
 # Settings
 # open apps from unidentified developers
