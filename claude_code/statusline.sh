@@ -61,19 +61,19 @@ _jq_out=$(echo "$input" | jq -r '
 { read -r model_name; read -r cwd; read -r size; read -r input_tokens; read -r cache_create; read -r cache_read; } <<< "$_jq_out"
 
 git_info=""
-if [ -n "$cwd" ] && git -C "$cwd" rev-parse --git-dir > /dev/null 2>&1; then
-    branch=$(git -C "$cwd" rev-parse --abbrev-ref HEAD 2>/dev/null)
+if [ -n "$cwd" ] && git --no-optional-locks -C "$cwd" rev-parse --git-dir > /dev/null 2>&1; then
+    branch=$(git --no-optional-locks -C "$cwd" rev-parse --abbrev-ref HEAD 2>/dev/null)
     if [ -n "$branch" ]; then
-        dirty=$(git -C "$cwd" status --porcelain 2>/dev/null | wc -l | tr -d ' ')
+        dirty=$(git --no-optional-locks -C "$cwd" status --porcelain 2>/dev/null | wc -l | tr -d ' ')
         if [ "$dirty" -gt 0 ]; then
             git_info="$branch ~$dirty"
         else
             git_info="$branch"
         fi
-        upstream=$(git -C "$cwd" rev-parse --abbrev-ref @{upstream} 2>/dev/null)
+        upstream=$(git --no-optional-locks -C "$cwd" rev-parse --abbrev-ref @{upstream} 2>/dev/null)
         if [ -n "$upstream" ]; then
-            ahead=$(git -C "$cwd" rev-list --count @{upstream}..HEAD 2>/dev/null)
-            behind=$(git -C "$cwd" rev-list --count HEAD..@{upstream} 2>/dev/null)
+            ahead=$(git --no-optional-locks -C "$cwd" rev-list --count @{upstream}..HEAD 2>/dev/null)
+            behind=$(git --no-optional-locks -C "$cwd" rev-list --count HEAD..@{upstream} 2>/dev/null)
             [ "$ahead" -gt 0 ] && git_info="$git_info ↑$ahead"
             [ "$behind" -gt 0 ] && git_info="$git_info ↓$behind"
         fi

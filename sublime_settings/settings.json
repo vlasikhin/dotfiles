@@ -1,49 +1,57 @@
 {
-  "auto_complete": true,
-  "auto_complete_commit_on_tab": true,
-  "block_caret": false,
-  "ensure_newline_at_eof_on_save": true,
-  "font_face": "Fira Code Medium",
-  "caret_extra_top": 1,
-  "caret_extra_bottom": 1,
-  "hide_tab_scrolling_buttons": true,
-  "auto_match_enabled" : true,
-  "font_options":
-  [
-    "no_liga",
-    "no_clig",
-    "no_calt"
-  ],
-  "font_size": 14,
-  "highlight_line": true,
-  "detect_indentation": true,
-  "rulers":
-  [
-    125
-  ],
-  "save_on_focus_lost": true,
-  "scroll_past_end": true,
-  "highlight_modified_tabs": true,
-  "show_encoding": true,
-  "show_line_annotation": false,
-  "show_status_bar_text": true,
-  "tab_size": 2,
-  "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true,
-  "index_exclude_patterns": ["*.log", "log/**", "*.csv"],
-  "word_wrap": false,
-  "color_scheme": "vpa-light.sublime-color-scheme",
-  "bold_folder_labels": true,
-  "popup_shadows": false,
-  "ignored_packages":
-  [
-    "Vintage",
-  ],
-  "dark_color_scheme": "vpa-light.sublime-color-scheme",
-  "light_color_scheme": "vpa-light.sublime-color-scheme",
-  "dark_theme": "Default.sublime-theme",
-  "light_theme": "Default.sublime-theme",
-  "theme": "Adaptive.sublime-theme",
-  "open_files_in_new_window": false,
-  "index_files": true
+    "auto_complete": true,
+    "auto_complete_commit_on_tab": true,
+    "block_caret": false,
+    "ensure_newline_at_eof_on_save": true,
+    "font_face": "SFMono-Medium",
+    "caret_extra_top": 1,
+    "caret_extra_bottom": 1,
+    "hide_tab_scrolling_buttons": true,
+    "auto_match_enabled": true,
+    "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", ".Trash", ".Trash-*", ".elixir_ls"],
+    "lsp_format_on_save": true,
+    "font_options":
+    [
+        "no_liga",
+        "no_clig",
+        "no_calt"
+    ],
+    "font_size": 14,
+    "highlight_line": true,
+    "detect_indentation": true,
+    "rulers":
+    [
+        125
+    ],
+    "save_on_focus_lost": true,
+    "scroll_past_end": true,
+    "highlight_modified_tabs": true,
+    "show_encoding": true,
+    "mini_diff": "auto",
+    "show_line_annotation": false,
+    "show_status_bar_text": true,
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "index_exclude_patterns":
+    [
+        "*.log",
+        "log/**",
+        "*.csv"
+    ],
+    "word_wrap": false,
+    "color_scheme": "One Light.sublime-color-scheme",
+    "bold_folder_labels": true,
+    "popup_shadows": true,
+    "ignored_packages":
+    [
+        "Vintage",
+    ],
+    "theme": "Adaptive.sublime-theme",
+    "open_files_in_new_window": false,
+    "index_files": true,
+    // theme settings
+    "theme.spacegray.sidebar.show_icons": true,
+    "dark_theme": "Adaptive.sublime-theme",
+    "light_theme": "Adaptive.sublime-theme",
 }

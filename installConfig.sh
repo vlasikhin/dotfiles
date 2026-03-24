@@ -5,10 +5,11 @@ set -e
 
 
 # Brew packages that I use
-brew install postgresql redis eza
+brew install git postgresql redis eza mc
 
 # Some cask packages
 brew install --cask ghostty \
+bitwarden \
 raycast \
 appcleaner \
 orbstack \
@@ -23,7 +24,7 @@ claude
 
 # Settings
 # open apps from unidentified developers
-sudo spctl --master-disable
+sudo spctl --master-disable || true
 
 # эту команду использовать при подключенном к сети ноуте
 # отключает долгий выход из сна
